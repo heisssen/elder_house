@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elderly House - Providing care and community for our beloved elders.">
+    <meta name="keywords" content="elderly, house, healthcare, community, elderly care">
+    <meta name="author" content="Elderly House Team">
+    <!-- FontAwesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Elderly House</title>
+    <!-- Tailwind CSS Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navigation Bar -->
+    <div id="navbar">
+        <!-- Include the content of navbar.html here -->
+        <nav class="bg-gradient-to-r from-green-500 to-teal-500 text-white p-6 shadow-lg">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="#" class="text-3xl font-bold tracking-wide font-poppins">Elderly House</a>
+                <ul class="flex space-x-8 text-lg">
+                    <li><a href="#home" class="hover:text-gray-200 transition duration-300">Home</a></li>
+                    <li><a href="#about" class="hover:text-gray-200 transition duration-300">About Us</a></li>
+                    <li><a href="#services" class="hover:text-gray-200 transition duration-300">Services</a></li>
+                    <li><a href="#contact" class="hover:text-gray-200 transition duration-300">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <div id="hero">
+        <!-- Include the content of hero.html here -->
+        <section id="home" class="relative h-screen bg-cover bg-center"
+            style="background-image: url('elder-fun.jpg');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="container mx-auto h-full flex flex-col justify-center items-center text-center relative z-10">
+                <h1 class="text-6xl text-white font-extrabold leading-tight tracking-wider font-poppins">Welcome to
+                    Elderly House</h1>
+                <p class="text-2xl text-white mt-6 max-w-2xl">Providing care, comfort, and community for your loved ones
+                    in a serene and safe environment.</p>
+                <a href="#contact"
+                    class="mt-12 bg-gradient-to-r from-teal-400 to-green-400 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">Get
+                    in Touch</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about">
+        <!-- Include the content of about.html here -->
+        <section id="about" class="py-24 bg-gray-100">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center font-poppins text-gray-700">About Us</h2>
+                <p class="mt-8 text-center text-lg max-w-3xl mx-auto text-gray-600 leading-relaxed">Elderly House is
+                    dedicated to providing a safe and nurturing environment for our beloved elders. Our mission is to
+                    ensure that every resident feels valued, respected, and part of a warm and welcoming community.</p>
+                <div class="flex justify-center mt-12">
+                    <img src="elder-fun.jpg" alt="Happy Elderly Person"
+                        class="rounded-xl shadow-lg w-2/3 md:w-1/3">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services">
+        <!-- Include the content of services.html here -->
+        <section id="services" class="py-24 bg-white">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center font-poppins text-gray-700">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+                    <!-- Service Cards -->
+                    <div
+                        class="bg-gradient-to-br from-green-100 to-teal-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+                        <h3 class="text-2xl font-bold text-green-800">Healthcare</h3>
+                        <p class="mt-4 text-gray-600">On-site healthcare professionals available 24/7 to ensure the
+                            well-being of our residents.</p>
+                        <div class="mt-6">
+                            <img src="healthcare.jpg" alt="Healthcare"
+                                class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-green-100 to-teal-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+                        <h3 class="text-2xl font-bold text-green-800">Daily Activities</h3>
+                        <p class="mt-4 text-gray-600">A wide range of activities including arts & crafts, music, and
+                            fitness programs.</p>
+                        <div class="mt-6">
+                            <img src="daily.jpg" alt="Daily Activities"
+                                class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-green-100 to-teal-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+                        <h3 class="text-2xl font-bold text-green-800">Community Events</h3>
+                        <p class="mt-4 text-gray-600">Regular community events and outings to keep our residents engaged
+                            and socially active.</p>
+                        <div class="mt-6">
+                            <img src="community.jpg" alt="Community Events"
+                                class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact">
+        <!-- Include the content of contact.html here -->
+        <section id="contact" class="py-24 bg-gray-100">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center font-poppins text-gray-700">Get in Touch</h2>
+                <form class="mt-12 max-w-2xl mx-auto bg-white p-10 rounded-xl shadow-lg">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 font-bold">Name</label>
+                        <input type="text" id="name"
+                            class="mt-2 w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-400"
+                            placeholder="Your Name">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 font-bold">Email</label>
+                        <input type="email" id="email"
+                            class="mt-2 w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-400"
+                            placeholder="Your Email">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-bold">Message</label>
+                        <textarea id="message"
+                            class="mt-2 w-full p-4 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-400"
+                            rows="5" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-teal-400 to-green-400 text-white py-4 rounded-lg font-bold hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-500 shadow-lg transition duration-300">Send
+                        Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <!-- Include the content of footer.html here -->
+        <footer class="bg-gradient-to-r from-green-500 to-teal-500 text-white py-12">
+            <div class="container mx-auto text-center">
+                <h4 class="text-lg font-semibold">Elderly House</h4>
+                <p class="mt-4">&copy; 2024 Elderly House. All Rights Reserved.</p>
+                <div class="flex justify-center space-x-4 mt-6">
+                    <a href="#" class="hover:text-gray-200 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-200 transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
