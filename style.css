@@ -1,148 +1,30 @@
-/* Основні стилі для сайту */
+/* Общие стили */
 body,
-h1,
-h2,
-h3,
-p {
-    font-family: 'Sans-serif', Arial, Helvetica;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Секція Testimonials */
-.slider {
+.hero-section {
+    background-size: cover;
+    background-position: center;
+}
+
+.testimonial-slider {
     overflow: hidden;
     position: relative;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-    min-width: 100%;
-    max-width: 100%;
+    display: none;
     opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    position: absolute;
-    top: 0;
-    left: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .slide.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Оформлення карток слайдів */
-.slide img {
-    border: 3px solid #4CAF50;
-    border-radius: 50%;
-    transition: transform 0.3s ease-in-out;
-}
-
-.slide img:hover {
-    transform: scale(1.1);
-}
-
-/* Стилізація індикаторів */
-.indicator {
-    width: 12px;
-    height: 12px;
-    background: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-.indicator.active {
-    background: #4CAF50;
-}
-
-/* Кнопки навігації */
-.slider-nav button {
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.slider-nav button:hover {
-    background-color: #3e8e41;
-}
-
-/* Стилі для секції FAQ */
-.faq-item {
-    transition: all 0.3s ease-in-out;
-}
-
-.faq-question {
-    background-color: #f9fafb;
-    cursor: pointer;
-    padding: 15px;
-    font-weight: bold;
-}
-
-.faq-answer {
-    display: none;
-    padding: 15px;
-    border-left: 4px solid #4CAF50;
-    margin-top: 10px;
-    background-color: #f0f0f0;
-}
-
-.faq-answer.show {
     display: block;
+    opacity: 1;
 }
 
-/* При наведенні на питання */
-.faq-question:hover {
-    background-color: #e2e8f0;
-}
-
-/* Анімація розгортання відповідей */
-.faq-answer {
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-}
-
-/* Модальне вікно */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-    position: relative;
-    margin: 10% auto;
-    padding: 20px;
-    max-width: 700px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.modal-content iframe {
-    width: 100%;
-    height: 400px;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #333;
-    font-size: 1.5rem;
+.slider-btn {
     cursor: pointer;
 }
