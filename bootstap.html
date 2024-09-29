@@ -17,41 +17,48 @@
 
 <body class="bg-light">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
-        <div class="container">
-            <a class="navbar-brand text-warning fw-bold" href="#">
-                <i class="fas fa-home"></i> HomeCare Vinnytsia
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#introduction">Про нас</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#benefits">Переваги</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#about_house">Про дім</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#values">Послуги</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#testimonials">Відгуки</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#contact-info">Контакти</a>
-                    </li>
-                </ul>
-                <a href="#contact" class="btn btn-warning text-white ms-lg-3">Записатися на екскурсію</a>
-            </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
+    <div class="container">
+        <!-- Логотип -->
+        <a class="navbar-brand fw-bold text-warning" href="#">
+            <i class="fas fa-home"></i> HomeCare Vinnytsia
+        </a>
+
+        <!-- Кнопка переключения мобильного меню -->
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Основные ссылки навигации -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#introduction">Про нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#benefits">Переваги</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#services">Послуги</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#testimonials">Відгуки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#contact-info">Контакти</a>
+                </li>
+                <!-- Кнопка CTA -->
+                <li class="nav-item ms-3">
+                    <a href="#contact" class="btn btn-warning text-white px-4 py-2 rounded-pill shadow-sm fw-bold">
+                        <i class="fas fa-phone-alt me-2"></i>Записатися на екскурсію
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 <!-- Hero Section -->
 <section id="hero-slider" class="hero-section position-relative bg-dark text-white"
