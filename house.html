@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про наш дім — HomeCare Vinnytsia</title>
+    <!-- Подключение Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Подключение кастомных стилей -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключение AOS (Animate on Scroll) для анимации -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+<!-- Navbar -->
+<nav class="fixed w-full bg-white shadow-lg z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Логотип -->
+        <div class="text-2xl font-bold text-yellow-500">
+            <a href="index.html" class="hover:text-yellow-600 transition-all">HomeCare Vinnytsia</a>
+        </div>
+        <!-- Ссылки навигации -->
+        <div class="hidden md:flex space-x-6">
+            <a href="index.html" class="text-gray-700 hover:text-yellow-500 transition-all">Головна</a>
+            <a href="about.html" class="text-gray-700 hover:text-yellow-500 transition-all">Про дім</a>
+            <a href="services.html" class="text-gray-700 hover:text-yellow-500 transition-all">Послуги</a>
+            <a href="contacts.html" class="text-gray-700 hover:text-yellow-500 transition-all">Контакти</a>
+        </div>
+        <!-- Кнопка CTA -->
+        <div class="hidden md:flex">
+            <a href="#contact"
+                class="inline-block bg-yellow-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-yellow-600 transition-all">
+                Записатися на екскурсію
+            </a>
+        </div>
+        <!-- Мобильное меню (иконка) -->
+        <div class="md:hidden">
+            <button id="nav-toggle" class="text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Про наш дім (добавляем отступ) -->
+<section id="about-home" class="pt-24 py-16 bg-white text-center">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-800 leading-tight">
+            Дім, де кожен відчуває себе як вдома
+        </h2>
+        <p class="text-lg text-gray-700 mb-12 leading-relaxed md:w-2/3 mx-auto">
+            Ми створюємо не просто місце проживання, а справжню родину для літніх людей. Затишок, турбота та професійний
+            догляд — це те, що відрізняє наш дім у Вінниці. Ми піклуємось про кожного, допомагаємо жити активним та
+            цікавим життям, зберігаючи радість та гідність на кожному етапі.
+        </p>
+    </div>
+</section>
+
+
+    <!-- Секция: Наші послуги -->
+    <section id="services" class="py-16 bg-gray-50 text-center fade-in" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-gray-800">Наші послуги</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Карточка 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card" data-aos="slide-up">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Медичний догляд</h3>
+                    <p class="text-lg text-gray-600">Цілодобовий медичний нагляд, регулярні огляди лікарів та
+                        індивідуальні програми реабілітації забезпечують постійний контроль здоров’я мешканців.</p>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card" data-aos="slide-up" data-aos-delay="100">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Активне дозвілля</h3>
+                    <p class="text-lg text-gray-600">Організовуємо групові заходи, майстер-класи, тематичні вечори, які
+                        збагачують життя мешканців та дарують позитивні емоції.</p>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg card" data-aos="slide-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Психологічна підтримка</h3>
+                    <p class="text-lg text-gray-600">Консультації з психологом, групові заняття для підтримки морального
+                        духу, подолання стресу та покращення емоційного стану.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция: Проблеми та їх вирішення -->
+    <section id="problems-solutions" class="py-16 bg-white relative text-left fade-in" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <div class="w-full md:w-2/3 mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-800 leading-tight text-center">
+                    Турбота про кожного мешканця
+                </h2>
+                <p class="text-lg text-gray-700 mb-12 text-center leading-relaxed">
+                    Ми не боїмося труднощів та викликів, з якими стикаються літні люди та їхні родини. Наш будинок
+                    пропонує комплексний підхід, який допомагає зберігати фізичне та емоційне здоров’я мешканців.
+                </p>
+
+                <!-- Проблемы и их решения в формате карточек -->
+                <div class="space-y-12">
+                    <!-- Проблема 1 -->
+                    <div
+                        class="bg-gray-50 p-8 rounded-lg shadow-lg card hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Проблема: Відчуття самотності</h3>
+                        <p class="text-lg text-gray-600 mb-4">Самотність — одна з найпоширеніших проблем серед літніх
+                            людей. Ми створюємо середовище, де мешканці можуть взаємодіяти, брати участь у спільних
+                            заходах, знаходити нових друзів та підтримку.</p>
+                    </div>
+                    <!-- Проблема 2 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg card hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+                        data-aos-delay="100">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Проблема: Потреба в медичній підтримці
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-4">Ми забезпечуємо цілодобовий медичний догляд, регулярні
+                            огляди лікарів та індивідуальні програми реабілітації, які підтримують здоров’я та
+                            активність.</p>
+                    </div>
+                    <!-- Проблема 3 -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg card hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105"
+                        data-aos-delay="200">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Проблема: Психологічні труднощі</h3>
+                        <p class="text-lg text-gray-600 mb-4">Ми надаємо підтримку психологів, проводимо групові заняття
+                            та надаємо можливість знайти нові захоплення, щоб кожен відчував себе щасливим.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея -->
+    <section id="gallery" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Наші кімнати та приміщення</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <img src="house.jpg" alt="Кімната 1"
+                    class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                <img src="house.jpg" alt="Кімната 2"
+                    class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                <img src="house.jpg" alt="Кімната 3"
+                    class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                <img src="house.jpg" alt="Вітальня"
+                    class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                <img src="house.jpg" alt="Сад"
+                    class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                <img src="house.jpg" alt="Їдальня"
+                    class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Контактная форма -->
+    <section id="contact" class="py-16 bg-gray-50 text-center fade-in" data-aos="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-gray-800">Зв'яжіться з нами</h2>
+            <form class="w-full md:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Ім'я</label>
+                    <input type="text" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваше ім'я">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Номер телефону</label>
+                    <input type="tel" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваш номер">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваш email">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Повідомлення</label>
+                    <textarea class="w-full px-4 py-2 border rounded-lg" rows="4"
+                        placeholder="Ваше повідомлення"></textarea>
+                </div>
+                <button class="w-full bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition-all">
+                    Надіслати
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Подключение AOS (Animate on Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 200,
+        });
+    </script>
+</body>
+
+</html>

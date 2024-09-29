@@ -11,374 +11,451 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Подключение кастомных стилей -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
 </head>
 
 <body class="bg-gray-100 font-sans">
-
-    <!-- Hero Section -->
-    <section class="hero-section relative bg-cover bg-center h-screen"
-        style="background-image: url('https://source.unsplash.com/random/1600x900?senior');">
-        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-        <div class="container mx-auto px-6 py-32 text-white relative z-10 text-center">
-            <h1 class="text-5xl font-extrabold mb-4">Комфорт та турбота — кожен день</h1>
-            <p class="mt-2 text-xl mb-8">Ваші рідні під надійним доглядом у нашому будинку для людей похилого віку у
-                Вінниці.</p>
-            <a href="#contact"
-                class="inline-block bg-yellow-500 text-lg font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-yellow-600 transition-all">
-                <i class="fas fa-phone-alt mr-2"></i>Запишіться на екскурсію
+<!-- Navbar -->
+<!-- Navbar -->
+<nav class="fixed w-full bg-white shadow-lg z-50">
+    <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+        <!-- Логотип -->
+        <div class="text-xl md:text-2xl font-bold text-yellow-500">
+            <a href="#" class="hover:text-yellow-600 transition-all">
+                <i class="fas fa-home"></i> HomeCare Vinnytsia
             </a>
         </div>
-    </section>
-
-<!-- Enhanced Greeting Section -->
-<section id="greeting" class="py-16 bg-white">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-8 text-gray-800">Професійний догляд, безпека та активне життя для літніх людей
-        </h2>
-        <div class="flex flex-wrap justify-center items-center -mx-4">
-            <!-- Карточка 1: Професійний догляд -->
-            <div class="w-full md:w-1/3 px-4 mb-8">
-                <div
-                    class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
-                    <i class="fas fa-user-nurse text-5xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Професійний догляд</h3>
-                    <p class="text-gray-600">
-                        Наш персонал має багаторічний досвід роботи з літніми людьми, надаючи кваліфіковану допомогу та
-                        підтримку 24/7.
-                    </p>
-                </div>
-            </div>
-            <!-- Карточка 2: Безпека -->
-            <div class="w-full md:w-1/3 px-4 mb-8">
-                <div
-                    class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
-                    <i class="fas fa-shield-alt text-5xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Безпека</h3>
-                    <p class="text-gray-600">
-                        Цілодобовий медичний нагляд, системи оповіщення та безпеки забезпечують максимальний захист
-                        мешканців нашого дому.
-                    </p>
-                </div>
-            </div>
-            <!-- Карточка 3: Активне життя -->
-            <div class="w-full md:w-1/3 px-4 mb-8">
-                <div
-                    class="p-6 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
-                    <i class="fas fa-dumbbell text-5xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Активне життя</h3>
-                    <p class="text-gray-600">
-                        Ми організовуємо щоденні заняття та заходи для підтримки фізичного і психологічного здоров’я
-                        мешканців.
-                    </p>
-                </div>
-            </div>
+        <!-- Ссылки навигации -->
+        <div class="hidden md:flex space-x-4 lg:space-x-6">
+            <a href="#introduction" class="text-gray-700 hover:text-yellow-500 transition-all">Про нас</a>
+            <a href="#benefits" class="text-gray-700 hover:text-yellow-500 transition-all">Переваги</a>
+            <a href="#services" class="text-gray-700 hover:text-yellow-500 transition-all">Послуги</a>
+            <a href="#testimonials" class="text-gray-700 hover:text-yellow-500 transition-all">Відгуки</a>
+            <a href="#contact-info" class="text-gray-700 hover:text-yellow-500 transition-all">Контакти</a>
         </div>
+        <!-- Кнопка CTA -->
+        <div class="hidden md:flex">
+            <a href="#contact"
+                class="inline-block bg-yellow-500 text-white px-4 md:px-6 py-2 rounded-full font-semibold hover:bg-yellow-600 transition-all">
+                Записатися на екскурсію
+            </a>
+        </div>
+        <!-- Мобильное меню (иконка) -->
+        <div class="md:hidden">
+            <button id="nav-toggle" class="text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Мобильное меню -->
+<div id="nav-menu"
+    class="md:hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-40 hidden">
+    <div class="bg-white rounded-lg w-3/4 max-w-sm p-8 space-y-6">
+        <a href="#introduction" class="block text-lg text-gray-700 hover:text-yellow-500">Про нас</a>
+        <a href="#benefits" class="block text-lg text-gray-700 hover:text-yellow-500">Переваги</a>
+        <a href="#services" class="block text-lg text-gray-700 hover:text-yellow-500">Послуги</a>
+        <a href="#testimonials" class="block text-lg text-gray-700 hover:text-yellow-500">Відгуки</a>
+        <a href="#contact-info" class="block text-lg text-gray-700 hover:text-yellow-500">Контакти</a>
         <a href="#contact"
-            class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all mt-8">
-            <i class="fas fa-info-circle mr-2"></i>Дізнатись більше
+            class="block bg-yellow-500 text-white text-center rounded-full px-6 py-2 hover:bg-yellow-600 transition-all">
+            Записатися на екскурсію
+        </a>
+        <button id="nav-close" class="text-gray-500 hover:text-gray-700 absolute top-6 right-6">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+    </div>
+</div>
+
+
+<!-- Hero Section -->
+<section class="hero-section relative bg-cover bg-center h-screen md:h-3/4 lg:h-screen"
+    style="background-image: url('https://source.unsplash.com/random/1600x900?senior-care');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="container mx-auto px-4 md:px-6 py-32 text-white relative z-10 text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">Комфорт та турбота — кожен день</h1>
+        <p class="mt-2 text-lg md:text-xl lg:text-2xl mb-8">Ваші рідні під надійним доглядом у нашому будинку для людей
+            похилого віку у Вінниці.</p>
+        <a href="#contact"
+            class="inline-block bg-yellow-500 text-lg md:text-xl font-semibold px-4 md:px-6 py-3 rounded-full shadow-lg hover:bg-yellow-600 transition-all">
+            <i class="fas fa-phone-alt mr-2"></i>Запишіться на екскурсію
         </a>
     </div>
 </section>
 
+    <!-- Block 1: Привітання та коротке представлення -->
+<section id="introduction" class="py-16 bg-white">
+    <div class="container mx-auto px-4 md:px-6 text-center">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="w-full md:w-1/2">
+                <img src="community.jpg" alt="Привітання" class="rounded-lg shadow-lg">
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Привітання та коротке представлення</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">
+                    Ви шукаєте місце, де ваші рідні відчуватимуть себе як вдома, а ви будете впевнені, що вони в надійних руках? Наша команда у Вінниці створює умови для літніх людей, в яких вони не лише отримують професійний догляд, але й відчувають любов, турботу та повагу до кожного життєвого етапу.
+                </p>
+                <a href="#contact" class="inline-block bg-yellow-500 text-white px-4 md:px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all">
+                    <i class="fas fa-info-circle mr-2"></i>Запишіться на екскурсію
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- New Section: Про дім -->
+    <section id="about-home" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-800">Про наш дім</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <!-- Изображение интерьера -->
+                <div class="w-full md:w-1/2">
+                    <img src="house.jpg" alt="Про дім"
+                        class="rounded-lg shadow-lg">
+                </div>
+                <!-- Описание дома -->
+                <div class="w-full md:w-1/2 text-left">
+                    <h3 class="text-3xl font-semibold mb-4 text-gray-800">Затишок, комфорт та турбота</h3>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Наш будинок для літніх людей у Вінниці — це місце, де кожен мешканець відчуває себе як вдома. Ми
+                        дбаємо про створення комфорту, безпеки та дружньої атмосфери. Наші кімнати обладнані сучасними
+                        меблями, зручними ліжками та усіма необхідними зручностями для щасливого проживання.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Ми розуміємо, як важливо мати власний простір та можливість насолоджуватися повсякденними
+                        заняттями. Саме тому наш дім для літніх людей пропонує широкий спектр послуг: від медичної
+                        допомоги до організації дозвілля та індивідуальних консультацій з психологами.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Ми віримо, що справжній дім — це місце, де панує турбота, взаєморозуміння та повага. Запрошуємо
+                        вас на екскурсію, аби на власні очі переконатися в унікальності нашого підходу до догляду за
+                        літніми людьми.
+                    </p>
+                    <a href="house.html"
+                        class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all">
+                        <i class="fas fa-home mr-2"></i>Дізнатись більше про наш дім
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Key Benefits Section -->
     <section id="benefits" class="py-16 bg-gray-50">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-12">Наші ключові переваги</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <div class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-heartbeat text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Медична підтримка 24/7</h3>
-                    <p class="text-gray-700">Регулярні огляди лікарів, контроль за станом здоров’я та професійний
-                        медичний догляд — ми завжди поруч, коли це потрібно.</p>
+            <h2 class="text-4xl font-bold mb-12 text-gray-800">Наші ключові переваги</h2>
+            <div class="flex flex-wrap justify-center items-center -mx-4">
+                <!-- Карточка 1: Професійний догляд -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div
+                        class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                        <img src="healthcare.jpg" alt="Професійний догляд" class="mb-4 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Професійний догляд</h3>
+                        <p class="text-gray-600">Наш персонал має багаторічний досвід роботи з літніми людьми, надаючи
+                            кваліфіковану допомогу та підтримку 24/7.</p>
+                    </div>
                 </div>
-                <div class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-bed text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Затишок та комфорт проживання</h3>
-                    <p class="text-gray-700">Ми створили атмосферу, де кожен відчуває себе як вдома: світлі кімнати,
-                        зручні меблі, ідеальна чистота.</p>
+                <!-- Карточка 2: Безпека -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div
+                        class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                        <img src="security.jpg" alt="Безпека"
+                            class="mb-4 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Безпека</h3>
+                        <p class="text-gray-600">Цілодобовий медичний нагляд, системи оповіщення та безпеки забезпечують
+                            максимальний захист мешканців нашого дому.</p>
+                    </div>
                 </div>
-                <div class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-hands text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Активне дозвілля</h3>
-                    <p class="text-gray-700">Щоденні заняття та заходи: від групових активностей до індивідуальних хобі,
-                        які допомагають зберігати енергію та інтерес до життя.</p>
-                </div>
-                <div class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-users text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Соціальна взаємодія</h3>
-                    <p class="text-gray-700">Спілкування з однолітками, підтримка дружніх стосунків та участь у спільних
-                        заходах, що запобігають почуттю самотності.</p>
-                </div>
-                <div class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-brain text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Психологічна підтримка</h3>
-                    <p class="text-gray-700">Робота з психологами, які допомагають подолати труднощі адаптації та
-                        підтримують гарний настрій кожного мешканця.</p>
+                <!-- Карточка 3: Активне життя -->
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div
+                        class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                        <img src="daily.jpg" alt="Активне життя"
+                            class="mb-4 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Активне життя</h3>
+                        <p class="text-gray-600">Ми організовуємо щоденні заняття та заходи для підтримки фізичного і
+                            психологічного здоров’я мешканців.</p>
+                    </div>
                 </div>
             </div>
-            <a href="#contact"
-                class="mt-12 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all">
-                Залишити заявку на консультацію
-            </a>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-12">Наші послуги — більше, ніж догляд</h2>
-            <p class="text-lg text-gray-700 mb-12">
-                "Наш будинок для літніх людей — це комплексний підхід до здоров’я та добробуту ваших рідних. Ми
-                враховуємо індивідуальні потреби кожного мешканця, створюючи умови, що відповідають їхнім уподобанням та
-                медичним показанням."
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <div class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-procedures text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Цілодобовий медичний догляд</h3>
-                    <p class="text-gray-700">Лікувальна фізкультура, регулярні огляди лікарів та контроль стану здоров’я
-                        для підтримання активності та здоров’я.</p>
-                </div>
-                <div class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-hands-wash text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Гігієнічні процедури</h3>
-                    <p class="text-gray-700">Догляд за зовнішністю, гігієна та допомога з побутовими питаннями, аби ваші
-                        рідні завжди відчували себе впевнено.</p>
-                </div>
-                <div class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-utensils text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Збалансоване харчування</h3>
-                    <p class="text-gray-700">Меню, складене дієтологами, що враховує дієтичні рекомендації та
-                        індивідуальні потреби кожного мешканця.</p>
-                </div>
-                <div class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-paint-brush text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Організація дозвілля</h3>
-                    <p class="text-gray-700">Тематичні вечори, творчі гуртки, екскурсії та майстер-класи, які збагачують
-                        життя та створюють позитивні емоції.</p>
-                </div>
-                <div class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
-                    <i class="fas fa-comments text-6xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Підтримка психоемоційного стану</h3>
-                    <p class="text-gray-700">Консультації з психологом, групові заняття для підтримки морального духу та
-                        позитивного мислення.</p>
-                </div>
-            </div>
-            <a href="#contact"
-                class="mt-12 inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all">
-                Дізнатися більше про наші послуги
-            </a>
-        </div>
-    </section>
-<!-- Testimonials Section -->
-<section id="testimonials" class="py-16 bg-gray-100">
+<!-- Block 3: Наші послуги — більше, ніж догляд -->
+<section id="services" class="py-16 bg-gray-50">
     <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-12">Реальні історії наших мешканців та відгуки родичів</h2>
-        <div class="testimonial-slider mb-8">
-            <!-- Слайдер отзывов -->
-            <div class="slide active">
-                <div class="p-6 bg-white border rounded-lg shadow-lg">
-                    <p class="italic text-gray-600">"Моя мама знову посміхається і щодня ділиться новими враженнями.
-                        Професіоналізм та людяність кожного працівника — ось що відрізняє цей дім."</p>
-                    <h3 class="mt-4 text-lg font-semibold text-yellow-500">— Наталія, донька мешканки</h3>
-                </div>
+        <h2 class="text-4xl font-bold mb-12 text-gray-800">Наші послуги — більше, ніж догляд</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-12">
+            Наш будинок для літніх людей — це комплексний підхід до здоров’я та добробуту ваших рідних. Ми враховуємо
+            індивідуальні потреби кожного мешканця, створюючи умови, що відповідають їхнім уподобанням та медичним
+            показанням.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+            <!-- Карточка 1: Медичний догляд -->
+            <div
+                class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                <i class="fas fa-heartbeat text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Цілодобовий медичний догляд та реабілітація</h3>
+                <p class="text-gray-600">Лікувальна фізкультура, регулярні огляди лікарів та контроль стану здоров’я для
+                    підтримання активності та здоров’я.</p>
             </div>
-            <div class="slide">
-                <div class="p-6 bg-white border rounded-lg shadow-lg">
-                    <p class="italic text-gray-600">"Довго шукали місце, де наш дідусь почуватиметься комфортно. Тут він
-                        знову активний, спілкується з новими друзями та навіть знайшов хобі — грає у шахи!"</p>
-                    <h3 class="mt-4 text-lg font-semibold text-yellow-500">— Андрій, онук мешканця</h3>
-                </div>
+            <!-- Карточка 2: Гігієнічні процедури -->
+            <div
+                class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                <i class="fas fa-bath text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Гігієнічні процедури та допомога у повсякденному
+                    житті</h3>
+                <p class="text-gray-600">Догляд за зовнішністю, гігієна та допомога з побутовими питаннями.</p>
             </div>
-        </div>
-        <div class="flex justify-center mt-8">
-            <button class="slider-btn prev bg-yellow-500 text-white w-8 h-8 rounded-full mx-2 focus:outline-none">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-btn next bg-yellow-500 text-white w-8 h-8 rounded-full mx-2 focus:outline-none">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section -->
-<section id="faq" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Поширені запитання</h2>
-        <div class="w-full md:w-2/3 mx-auto">
-            <!-- Вопрос 1: Вартість -->
-            <div class="mb-4">
-                <button
-                    class="w-full text-left px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200 focus:outline-none focus:ring transition-all"
-                    onclick="toggleFAQ(1)">
-                    <i class="fas fa-chevron-down mr-2"></i> Скільки коштує проживання у вашому домі?
-                </button>
-                <div id="faq1" class="mt-2 px-4 py-2 text-gray-600 bg-white rounded-lg shadow-sm hidden">
-                    <p>
-                        Вартість проживання залежить від індивідуальних потреб мешканця, типу догляду та тривалості
-                        перебування. Ми розуміємо, що кожна людина потребує індивідуального підходу, тому надаємо гнучкі
-                        тарифи, які включають всі необхідні послуги.
-                        Для отримання точної вартості заповніть форму зворотного зв'язку, і наш менеджер допоможе
-                        підібрати найкращі умови.
-                    </p>
-                </div>
+            <!-- Карточка 3: Збалансоване харчування -->
+            <div
+                class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                <i class="fas fa-utensils text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Збалансоване харчування</h3>
+                <p class="text-gray-600">Меню, складене дієтологами, що враховує дієтичні рекомендації та індивідуальні
+                    потреби.</p>
             </div>
-
-            <!-- Вопрос 2: Медичний персонал -->
-            <div class="mb-4">
-                <button
-                    class="w-full text-left px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200 focus:outline-none focus:ring transition-all"
-                    onclick="toggleFAQ(2)">
-                    <i class="fas fa-chevron-down mr-2"></i> Чи є у вас медичний персонал?
-                </button>
-                <div id="faq2" class="mt-2 px-4 py-2 text-gray-600 bg-white rounded-lg shadow-sm hidden">
-                    <p>
-                        Так, у нашому будинку працюють висококваліфіковані лікарі, медсестри та реабілітологи. Ми
-                        забезпечуємо цілодобовий медичний супровід, проводимо регулярні огляди та оперативно реагуємо на
-                        будь-які зміни у стані здоров'я мешканців.
-                        Це дає змогу вам бути впевненими у безпеці та здоров'ї ваших рідних.
-                    </p>
-                </div>
+            <!-- Карточка 4: Організація дозвілля -->
+            <div
+                class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                <i class="fas fa-music text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Організація дозвілля та культурні заходи</h3>
+                <p class="text-gray-600">Тематичні вечори, творчі гуртки, екскурсії та майстер-класи, які збагачують
+                    життя та створюють позитивні емоції.</p>
             </div>
-
-            <!-- Вопрос 3: Умови проживання -->
-            <div class="mb-4">
-                <button
-                    class="w-full text-left px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200 focus:outline-none focus:ring transition-all"
-                    onclick="toggleFAQ(3)">
-                    <i class="fas fa-chevron-down mr-2"></i> Які умови проживання ви надаєте?
-                </button>
-                <div id="faq3" class="mt-2 px-4 py-2 text-gray-600 bg-white rounded-lg shadow-sm hidden">
-                    <p>
-                        Ми пропонуємо комфортні кімнати з усіма зручностями: ліжка, меблі, телевізори, окремі зони для
-                        відпочинку. Кожна кімната обладнана таким чином, щоб забезпечити максимальний комфорт та
-                        безпеку. У нашому домі регулярно проводяться прибирання та дезінфекція приміщень.
-                    </p>
-                </div>
+            <!-- Карточка 5: Психоемоційна підтримка -->
+            <div
+                class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                <i class="fas fa-brain text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Підтримка психоемоційного стану</h3>
+                <p class="text-gray-600">Консультації з психологом, групові заняття для підтримки морального духу.</p>
             </div>
-
-            <!-- Вопрос 4: Відвідування -->
-            <div class="mb-4">
-                <button
-                    class="w-full text-left px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200 focus:outline-none focus:ring transition-all"
-                    onclick="toggleFAQ(4)">
-                    <i class="fas fa-chevron-down mr-2"></i> Як часто я можу відвідувати своїх рідних?
-                </button>
-                <div id="faq4" class="mt-2 px-4 py-2 text-gray-600 bg-white rounded-lg shadow-sm hidden">
-                    <p>
-                        Ви можете відвідувати своїх рідних у зручний для вас час, оскільки ми завжди відкриті для родин
-                        мешканців. Також у нас є можливість спілкування через відеозв'язок та телефоном у разі, якщо ви
-                        не можете приїхати особисто. Наша мета — зберігати зв'язок між вами та вашими рідними, щоб вони
-                        відчували підтримку та турботу навіть на відстані.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Вопрос 5: Адаптація -->
-            <div class="mb-4">
-                <button
-                    class="w-full text-left px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200 focus:outline-none focus:ring transition-all"
-                    onclick="toggleFAQ(5)">
-                    <i class="fas fa-chevron-down mr-2"></i> Як проходить адаптація літньої людини в новому середовищі?
-                </button>
-                <div id="faq5" class="mt-2 px-4 py-2 text-gray-600 bg-white rounded-lg shadow-sm hidden">
-                    <p>
-                        Адаптація — це важливий етап, і ми надаємо всебічну підтримку як літній людині, так і її родині.
-                        Наші психологи та соціальні працівники допомагають новим мешканцям звикнути до нових умов,
-                        налагодити контакти з іншими жителями та взяти участь у соціальних активностях.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Вопрос 6: Індивідуальні потреби -->
-            <div class="mb-4">
-                <button
-                    class="w-full text-left px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200 focus:outline-none focus:ring transition-all"
-                    onclick="toggleFAQ(6)">
-                    <i class="fas fa-chevron-down mr-2"></i> Чи враховуються індивідуальні потреби та уподобання моїх
-                    рідних?
-                </button>
-                <div id="faq6" class="mt-2 px-4 py-2 text-gray-600 bg-white rounded-lg shadow-sm hidden">
-                    <p>
-                        Так, ми враховуємо індивідуальні побажання та потреби кожного мешканця, включаючи дієтичні
-                        уподобання, режим дня, особливості медичного догляду та інтереси. Наш будинок для літніх людей
-                        створює умови, де кожен може зберігати свою особистість та комфортний стиль життя.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Вопрос 7: Медичні послуги -->
-            <div class="mb-4">
-                <button
-                    class="w-full text-left px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200 focus:outline-none focus:ring transition-all"
-                    onclick="toggleFAQ(7)">
-                    <i class="fas fa-chevron-down mr-2"></i> Які саме медичні послуги ви надаєте?
-                </button>
-                <div id="faq7" class="mt-2 px-4 py-2 text-gray-600 bg-white rounded-lg shadow-sm hidden">
-                    <p>
-                        Ми надаємо широкий спектр медичних послуг: від щоденного контролю за станом здоров’я до
-                        реабілітаційних програм, лікувальної фізкультури, профілактики та діагностики. Крім того,
-                        проводимо консультації з вузькопрофільними спеціалістами за потреби.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Вопрос 8: Організація дозвілля -->
-            <div class="mb-4">
-                <button
-                    class="w-full text-left px-4 py-2 bg-gray-100 rounded-lg shadow hover:bg-gray-200 focus:outline-none focus:ring transition-all"
-                    onclick="toggleFAQ(8)">
-                    <i class="fas fa-chevron-down mr-2"></i> Як організоване дозвілля літніх людей?
-                </button>
-                <div id="faq8" class="mt-2 px-4 py-2 text-gray-600 bg-white rounded-lg shadow-sm hidden">
-                    <p>
-                        Ми організовуємо тематичні вечори, творчі заняття, майстер-класи, спільні прогулянки, а також
-                        культурні заходи. Наші працівники враховують інтереси та хобі кожного мешканця, щоб зробити
-                        кожен день різноманітним та цікавим.
-                    </p>
-                </div>
+            <!-- Новая карточка 6: Сучасні умови проживання -->
+            <div
+                class="p-8 bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                <i class="fas fa-home text-5xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Сучасні умови проживання</h3>
+                <p class="text-gray-600">Затишні кімнати, сучасне обладнання та комфортні зони відпочинку для кожного
+                    мешканця. Ми дбаємо про безпеку та зручність наших мешканців.</p>
             </div>
         </div>
+        <a href="#contact"
+            class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all">
+            <i class="fas fa-info-circle mr-2"></i>Дізнатися більше про наші послуги
+        </a>
     </div>
 </section>
 
 
-<!-- Contact Us Section -->
-<section id="contact" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12">Зв'яжіться з нами</h2>
-        <form class="w-full md:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg">
-            <div class="mb-4">
-                <label class="block text-gray-700">Ім'я</label>
-                <input type="text" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваше ім'я">
+    <!-- Block 5: Як ми працюємо? -->
+    <section id="how-we-work" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-800">Як ми працюємо?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Карточка 1: Залиште заявку або зателефонуйте нам -->
+                <div
+                    class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                    <i class="fas fa-phone-alt text-5xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Залиште заявку або зателефонуйте нам</h3>
+                    <p class="text-gray-600">Ми відповімо на всі ваші питання та організуємо консультацію з нашим фахівцем.
+                    </p>
+                </div>
+                <!-- Карточка 2: Індивідуальна оцінка потреб -->
+                <div
+                    class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                    <i class="fas fa-user-check text-5xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Індивідуальна оцінка потреб</h3>
+                    <p class="text-gray-600">Разом ми визначимо, які саме послуги потрібні вашому близькому, і створимо
+                        індивідуальну програму догляду.</p>
+                </div>
+                <!-- Карточка 3: Знайомство та адаптація -->
+                <div
+                    class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                    <i class="fas fa-handshake text-5xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Знайомство та адаптація</h3>
+                    <p class="text-gray-600">Допоможемо вашому родичу відчути себе комфортно в новому середовищі та
+                        познайомитися з іншими мешканцями.</p>
+                </div>
+                <!-- Карточка 4: Безпечне та щасливе життя -->
+                <div
+                    class="p-8 bg-gray-50 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:-translate-y-1 duration-300">
+                    <i class="fas fa-heart text-5xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2 text-gray-800">Безпечне та щасливе життя</h3>
+                    <p class="text-gray-600">Наша команда піклується про кожен аспект життя мешканців, аби вони відчували
+                        турботу, захищеність і задоволення від кожного дня.</p>
+                </div>
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Номер телефону</label>
-                <input type="tel" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваш номер">
+            <a href="#contact"
+                class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all">
+                <i class="fas fa-info-circle mr-2"></i>Залишити заявку на консультацію
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12">Реальні історії наших мешканців та відгуки родичів</h2>
+            <div class="testimonial-slider mb-8">
+                <div class="slide active">
+                    <div class="p-6 bg-white border rounded-lg shadow-lg">
+                        <img src="https://source.unsplash.com/random/100x100?happy" alt="Мешканець"
+                            class="w-16 h-16 rounded-full mx-auto mb-4">
+                        <p class="italic text-gray-600">"Моя мама знову посміхається і щодня ділиться новими враженнями.
+                            Професіоналізм та людяність кожного працівника — ось що відрізняє цей дім."</p>
+                        <h3 class="mt-4 text-lg font-semibold text-yellow-500">— Наталія, донька мешканки</h3>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="p-6 bg-white border rounded-lg shadow-lg">
+                        <img src="https://source.unsplash.com/random/100x100?elderly" alt="Мешканець"
+                            class="w-16 h-16 rounded-full mx-auto mb-4">
+                        <p class="italic text-gray-600">"Довго шукали місце, де наш дідусь почуватиметься комфортно. Тут
+                            він знову активний, спілкується з новими друзями та навіть знайшов хобі — грає у шахи!"</p>
+                        <h3 class="mt-4 text-lg font-semibold text-yellow-500">— Андрій, онук мешканця</h3>
+                    </div>
+                </div>
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Email</label>
-                <input type="email" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваш email">
+            <div class="flex justify-center mt-8">
+                <button class="slider-btn prev bg-yellow-500 text-white w-8 h-8 rounded-full mx-2 focus:outline-none">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-btn next bg-yellow-500 text-white w-8 h-8 rounded-full mx-2 focus:outline-none">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Повідомлення</label>
-                <textarea class="w-full px-4 py-2 border rounded-lg" rows="4"
-                    placeholder="Ваше повідомлення"></textarea>
+        </div>
+    </section>
+
+ 
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12">Зв'яжіться з нами</h2>
+            <form class="w-full md:w-1/2 mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Ім'я</label>
+                    <input type="text" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваше ім'я">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Номер телефону</label>
+                    <input type="tel" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваш номер">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border rounded-lg" placeholder="Введіть ваш email">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Повідомлення</label>
+                    <textarea class="w-full px-4 py-2 border rounded-lg" rows="4"
+                        placeholder="Ваше повідомлення"></textarea>
+                </div>
+                <button class="w-full bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition-all">
+                    <i class="fas fa-paper-plane mr-2"></i>Надіслати
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Block 6: Контакти та розташування -->
+    <section id="contact-info" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 text-gray-800">Контакти та розташування</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Контактна інформація -->
+                <div class="text-left">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4"><i
+                                class="fas fa-map-marker-alt text-yellow-500 mr-2"></i>Адреса</h3>
+                        <p class="text-lg text-gray-700">м. Вінниця, вул. Прикладна, 5</p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4"><i
+                                class="fas fa-phone-alt text-yellow-500 mr-2"></i>Телефон</h3>
+                        <p class="text-lg text-gray-700">+380 (XX) XXX-XX-XX</p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4"><i
+                                class="fas fa-envelope text-yellow-500 mr-2"></i>Електронна пошта</h3>
+                        <p class="text-lg text-gray-700">info@homecare-vinnytsia.ua</p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4"><i
+                                class="fas fa-clock text-yellow-500 mr-2"></i>Графік роботи</h3>
+                        <p class="text-lg text-gray-700">Понеділок — П’ятниця, 09:00 — 18:00</p>
+                    </div>
+                    <a href="#contact"
+                        class="inline-block bg-yellow-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-all">
+                        <i class="fas fa-calendar-alt mr-2"></i>Записатися на екскурсію або отримати консультацію
+                    </a>
+                </div>
+                <!-- Карта -->
+                <div class="w-full h-64 md:h-full">
+                    <iframe class="w-full h-full rounded-lg shadow-lg"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.077407432077!2d28.482003815735036!3d49.23308337932647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472d330c1de2bdfd%3A0xa7d8b535ff29b2c8!2z0LLRg9C70LjRhtGPINCS0L7QvNGD0LrQuCDQv9Cw0YDQvtCy0YHQuiwgNSwg0J7QntCe0JHQldGW0IbQvdC-0LzRltC9LCDQodGC0YPRgNGP0L3QuNGG0LrQsCDQvtCx0LsuINC_0YDQvtGB0YLRj9GC0LXRgiwgMjEwMDA!5e0!3m2!1suk!2sua!4v1634543425098!5m2!1suk!2sua"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
             </div>
-            <button class="w-full bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition-all">
-                <i class="fas fa-paper-plane mr-2"></i>Надіслати
-            </button>
-        </form>
-    </div>
-</section>
+        </div>
+    </section>
+
 
 <!-- Footer -->
-<footer class="py-6 bg-gray-900 text-white text-center">
-    <p class="text-sm">&copy; 2024 Дім для літніх людей у Вінниці. Всі права захищені.</p>
+<footer class="py-12 bg-gray-900 text-white text-center">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+            <!-- Логотип и О нас -->
+            <div>
+                <h3 class="text-2xl font-bold text-yellow-500 mb-4">HomeCare Vinnytsia</h3>
+                <p class="text-gray-400">Наш будинок для літніх людей у Вінниці — це місце, де кожен мешканець відчуває
+                    себе як вдома. Ми дбаємо про створення комфорту, безпеки та дружньої атмосфери.</p>
+            </div>
+            <!-- Быстрая навигация -->
+            <div>
+                <h3 class="text-xl font-semibold text-yellow-500 mb-4">Швидкі посилання</h3>
+                <ul class="space-y-2">
+                    <li><a href="#introduction" class="text-gray-400 hover:text-yellow-500 transition-all">Про нас</a>
+                    </li>
+                    <li><a href="#benefits" class="text-gray-400 hover:text-yellow-500 transition-all">Переваги</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-yellow-500 transition-all">Послуги</a></li>
+                    <li><a href="#testimonials" class="text-gray-400 hover:text-yellow-500 transition-all">Відгуки</a>
+                    </li>
+                    <li><a href="#contact-info" class="text-gray-400 hover:text-yellow-500 transition-all">Контакти</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Контакты -->
+            <div>
+                <h3 class="text-xl font-semibold text-yellow-500 mb-4">Контакти</h3>
+                <p class="text-gray-400 mb-2"><i class="fas fa-map-marker-alt mr-2"></i> м. Вінниця, вул. Прикладна, 5
+                </p>
+                <p class="text-gray-400 mb-2"><i class="fas fa-phone-alt mr-2"></i> +380 (XX) XXX-XX-XX</p>
+                <p class="text-gray-400 mb-2"><i class="fas fa-envelope mr-2"></i> info@homecare-vinnytsia.ua</p>
+                <p class="text-gray-400"><i class="fas fa-clock mr-2"></i> Понеділок — П’ятниця, 09:00 — 18:00</p>
+            </div>
+        </div>
+        <div class="text-sm text-gray-500">
+            &copy; 2024 HomeCare Vinnytsia. Всі права захищені.
+        </div>
+    </div>
 </footer>
 
+
     <!-- Подключение скриптов -->
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 800,
+                offset: 200,
+            });
+        </script>
+
     <script src="index.js"></script>
 </body>
 

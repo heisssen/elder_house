@@ -35,3 +35,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 });
+
+// Мобильное меню навбара
+document.addEventListener('DOMContentLoaded', function () {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navClose = document.getElementById('nav-close');
+
+    if (navToggle && navMenu && navClose) {
+        navToggle.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+        });
+
+        navClose.addEventListener('click', function () {
+            navMenu.classList.remove('active');
+        });
+    }
+
+    // Изменение цвета навбара при прокрутке
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+});
+

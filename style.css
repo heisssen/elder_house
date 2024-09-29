@@ -1,86 +1,245 @@
-body,
-html {
-    scroll-behavior: smooth;
-    font-family: 'Arial', sans-serif;
+/* Основные стили для всего сайта */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7fafc;
 }
 
+/* Стили для навбара */
+nav {
+    background-color: #ffffff;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+nav.scrolled {
+    background-color: #f7fafc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#nav-toggle,
+#nav-close {
+    cursor: pointer;
+}
+
+/* Стили для мобильного меню */
+#nav-menu {
+    display: none;
+}
+
+#nav-menu.active {
+    display: flex;
+}
+
+#nav-menu a {
+    font-size: 1.125rem;
+}
+
+#nav-menu button {
+    cursor: pointer;
+}
+
+/* Стили для Hero Section */
 .hero-section {
-    background-size: cover;
-    background-position: center;
+    height: 100vh;
 }
 
-/* Убираем затемнение фона для секции greeting */
-#greeting {
-    background: none;
-    padding-top: 60px;
-    padding-bottom: 60px;
+.hero-section h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
 }
 
-#greeting .container {
-    background: none;
-    box-shadow: none;
+.hero-section p {
+    font-size: 1.25rem;
 }
 
-/* Стили текста */
-#greeting h2,
-#greeting h3,
-#greeting p {
-    color: #2d3748;
-    /* Цвет текста - темно-серый для лучшего контраста */
+/* Стили для заголовков секций */
+section h2 {
+    font-size: 2rem;
+    line-height: 1.2;
 }
 
-#benefits .card {
+section p {
+    font-size: 1rem;
+}
+
+/* Стили для карточек */
+.card {
+    padding: 2rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Стили для изображений */
+img.rounded-lg {
     transition: transform 0.3s ease-in-out;
 }
 
-#benefits .card:hover {
-    transform: translateY(-10px);
-    /* Поднятие карточки при наведении */
+img.rounded-lg:hover {
+    transform: scale(1.05);
 }
 
-/* Иконки в карточках */
-.card i {
-    font-size: 3rem;
+/* Стили для кнопок */
+button,
+a.btn,
+input[type="submit"] {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+button:hover,
+a.btn:hover,
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+}
+
+/* Стили для кнопок CTA */
+.bg-yellow-500 {
+    background-color: #ecc94b;
+}
+
+.bg-yellow-500:hover {
+    background-color: #d69e2e;
+}
+
+/* Стили для формы */
+form input,
+form textarea {
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ecc94b;
+    outline: none;
+}
+
+form button {
+    font-size: 1.125rem;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #1a202c;
+}
+
+footer h3 {
+    font-size: 1.25rem;
     color: #ecc94b;
 }
 
-.testimonial-slider {
-    overflow: hidden;
-    position: relative;
+footer p,
+footer a {
+    font-size: 0.875rem;
+    color: #a0aec0;
+    transition: color 0.3s ease;
 }
 
-.slide {
+footer a:hover {
+    color: #ecc94b;
+}
+
+/* Стили для карты в блоке Контакти та розташування */
+#contact-info iframe {
+    border: none;
+}
+
+/* Стили для карточек блока "Наші послуги" */
+.card-service {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-service:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Стили для отзывов */
+.testimonial-slider .slide {
     display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 
-.slide.active {
+.testimonial-slider .slide.active {
     display: block;
-    opacity: 1;
 }
 
 .slider-btn {
     cursor: pointer;
 }
 
-.hidden {
-    display: none;
+/* Стили адаптивности для мобильных устройств */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+    }
+
+    section p {
+        font-size: 0.875rem;
+    }
+
+    nav a {
+        font-size: 0.875rem;
+    }
+
+    .testimonial-slider .slide {
+        font-size: 0.875rem;
+    }
+
+    /* Стили для карточек */
+    .card-service,
+    .card {
+        padding: 1.5rem;
+    }
 }
 
-/* Дополнительные стили для формы */
-form input,
-form textarea {
-    border: 2px solid #e2e8f0;
-    transition: border-color 0.2s;
-}
+@media (max-width: 640px) {
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
 
-form input:focus,
-form textarea:focus {
-    border-color: #ecc94b;
-}
+    .hero-section p {
+        font-size: 0.875rem;
+    }
 
-form button {
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    section p {
+        font-size: 0.875rem;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+    }
+
+    .card-service,
+    .card {
+        padding: 1.25rem;
+    }
 }
