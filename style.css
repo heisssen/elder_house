@@ -1,12 +1,47 @@
-/* Общие стили */
 body,
 html {
     scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif;
 }
 
 .hero-section {
     background-size: cover;
     background-position: center;
+}
+
+/* Убираем затемнение фона для секции greeting */
+#greeting {
+    background: none;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#greeting .container {
+    background: none;
+    box-shadow: none;
+}
+
+/* Стили текста */
+#greeting h2,
+#greeting h3,
+#greeting p {
+    color: #2d3748;
+    /* Цвет текста - темно-серый для лучшего контраста */
+}
+
+#benefits .card {
+    transition: transform 0.3s ease-in-out;
+}
+
+#benefits .card:hover {
+    transform: translateY(-10px);
+    /* Поднятие карточки при наведении */
+}
+
+/* Иконки в карточках */
+.card i {
+    font-size: 3rem;
+    color: #ecc94b;
 }
 
 .testimonial-slider {
@@ -27,4 +62,25 @@ html {
 
 .slider-btn {
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Дополнительные стили для формы */
+form input,
+form textarea {
+    border: 2px solid #e2e8f0;
+    transition: border-color 0.2s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ecc94b;
+}
+
+form button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
