@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дім для літніх людей у Вінниці</title>
+    <!-- Подключение Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключение FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Подключение кастомных стилей -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключение AOS (Animate on Scroll) для анимации -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-warning fw-bold" href="#">
+                <i class="fas fa-home"></i> HomeCare Vinnytsia
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#introduction">Про нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#benefits">Переваги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#about_house">Про дім</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#values">Послуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#testimonials">Відгуки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#contact-info">Контакти</a>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-warning text-white ms-lg-3">Записатися на екскурсію</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+<section id="hero-slider" class="hero-section position-relative bg-dark text-white"
+    style="height: 100vh; overflow: hidden;">
+    <!-- Слайдер -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Слайд 1 -->
+            <div class="carousel-item active"
+                style="background-image: url('hero1.jpg'); height: 100vh; background-size: cover; background-position: center;">
+                <div class="overlay"
+                    style="background: rgba(0, 0, 0, 0.5); position: absolute; width: 100%; height: 100%;"></div>
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
+                    <h1 class="display-3 fw-bold mb-4">Комфорт та турбота — кожен день</h1>
+                    <p class="lead mb-4">Ваші рідні під надійним доглядом у нашому будинку для людей похилого віку у
+                        Вінниці.</p>
+                    <a href="#contact" class="btn btn-warning btn-lg text-white px-4 py-3">
+                        <i class="fas fa-phone-alt me-2"></i>Запишіться на екскурсію
+                    </a>
+                </div>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="carousel-item"
+                style="background-image: url('hero2.jpg'); height: 100vh; background-size: cover; background-position: center;">
+                <div class="overlay"
+                    style="background: rgba(0, 0, 0, 0.5); position: absolute; width: 100%; height: 100%;"></div>
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
+                    <h1 class="display-3 fw-bold mb-4">Професійний догляд та безпека</h1>
+                    <p class="lead mb-4">Ми забезпечуємо медичний нагляд, підтримку та комфорт 24/7 для кожного
+                        мешканця.</p>
+                    <a href="#services" class="btn btn-warning btn-lg text-white px-4 py-3">
+                        <i class="fas fa-info-circle me-2"></i>Дізнатися більше про послуги
+                    </a>
+                </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="carousel-item"
+                style="background-image: url('hero3.jpg'); height: 100vh; background-size: cover; background-position: center;">
+                <div class="overlay"
+                    style="background: rgba(0, 0, 0, 0.5); position: absolute; width: 100%; height: 100%;"></div>
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100">
+                    <h1 class="display-3 fw-bold mb-4">Активне та щасливе життя</h1>
+                    <p class="lead mb-4">Наші мешканці насолоджуються соціальною активністю, дружньою атмосферою та
+                        повагою до їхніх потреб.</p>
+                    <a href="#contact" class="btn btn-warning btn-lg text-white px-4 py-3">
+                        <i class="fas fa-handshake me-2"></i>Залишити заявку на консультацію
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопки управления слайдером -->
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Попередній</span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Наступний</span>
+        </a>
+    </div>
+</section>
+
+
+    <!-- Block 1: Привітання та коротке представлення -->
+    <section id="introduction" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="community.jpg" class="img-fluid rounded shadow" alt="Привітання">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="h1 fw-bold text-dark mb-4">Трохи про нас</h2>
+                    <p class="lead text-muted mb-4">Ви шукаєте місце, де ваші рідні відчуватимуть себе як вдома, а ви
+                        будете впевнені, що вони в надійних руках? Наша команда у Вінниці створює умови для літніх
+                        людей, в яких вони не лише отримують професійний догляд, але й відчувають любов, турботу та
+                        повагу до кожного життєвого етапу.</p>
+                    <a href="#contact" class="btn btn-warning text-white"><i
+                            class="fas fa-info-circle me-2"></i>Запишіться на екскурсію</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section id="benefits" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold text-dark mb-5">Наші ключові переваги</h2>
+            <div class="row">
+                <!-- Карточка 1: Професійний догляд -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow h-100">
+                        <img src="healthcare.jpg" class="card-img-top rounded-top" alt="Професійний догляд">
+                        <div class="card-body">
+                            <h5 class="card-title">Професійний догляд</h5>
+                            <p class="card-text">Наш персонал має багаторічний досвід роботи з літніми людьми, надаючи
+                                кваліфіковану допомогу та підтримку 24/7.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 2: Безпека -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow h-100">
+                        <img src="security.jpg" class="card-img-top rounded-top" alt="Безпека">
+                        <div class="card-body">
+                            <h5 class="card-title">Безпека</h5>
+                            <p class="card-text">Цілодобовий медичний нагляд, системи оповіщення та безпеки забезпечують
+                                максимальний захист мешканців нашого дому.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 3: Активне життя -->
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow h-100">
+                        <img src="daily.jpg" class="card-img-top rounded-top" alt="Активне життя">
+                        <div class="card-body">
+                            <h5 class="card-title">Активне життя</h5>
+                            <p class="card-text">Ми організовуємо щоденні заняття та заходи для підтримки фізичного і
+                                психологічного здоров’я мешканців.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Section: Про наш дім -->
+        <section id="about_house" class="py-5 bg-white" style="padding-top: 100px;">
+            <div class="container">
+                <div class="row justify-content-center text-center mb-5">
+                    <div class="col-lg-8">
+                        <h1 class="display-4 fw-bold text-dark">Про наш дім</h1>
+                        <p class="lead text-muted mt-3">Наш будинок для літніх людей у Вінниці — це місце, де кожен мешканець
+                            відчуває себе як вдома. Ми створюємо середовище комфорту, дружньої атмосфери та професійної
+                            турботи, де кожен отримує увагу та підтримку на кожному етапі свого життя.</p>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-5">
+                    <div class="col-md-6">
+                        <img src="house.jpg" class="img-fluid rounded shadow" alt="Інтер'єр будинку">
+                    </div>
+                    <div class="col-md-6 mt-4 mt-md-0">
+                        <h2 class="h1 text-dark mb-4">Затишок, комфорт та турбота</h2>
+                        <p class="lead text-muted mb-4">Ми розуміємо, як важливо створити умови, де кожен мешканець
+                            відчуває себе комфортно та захищено. Наш будинок пропонує світлі кімнати, зручні меблі та
+                            сучасні зони для відпочинку та дозвілля, аби кожен відчував себе як вдома.</p>
+                        <p class="lead text-muted">Піклуючись про здоров’я, ми також враховуємо індивідуальні
+                            потреби кожного мешканця. Щоденні заходи, групові заняття та індивідуальні консультації
+                            з психологами — усе це доступно нашим мешканцям для підтримки гарного настрою та фізичної
+                            активності.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+<!-- Values Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <!-- Заголовок и описание секции -->
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-4 fw-bold">Наші цінності</h2>
+                <p class="lead text-muted">Ми дотримуємось високих стандартів якості догляду за нашими мешканцями,
+                    створюючи місце, де вони можуть відчути себе у безпеці, гармонії та постійній підтримці.</p>
+            </div>
+        </div>
+
+        <!-- Блоки с ценностями -->
+        <div class="row g-4">
+            <!-- Value 1: Повага до кожного -->
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card border-0 shadow h-100">
+                    <!-- Изображение сверху карточки -->
+                    <img src="daily.jpg" class="card-img-top rounded-top"
+                        alt="Повага до кожного">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark fw-bold mb-3">Повага до кожного</h5>
+                        <p class="card-text text-muted">Ми поважаємо кожного мешканця, розуміємо їх потреби та дбаємо
+                            про створення умов, які забезпечують збереження їхньої гідності.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value 2: Професійна турбота -->
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card border-0 shadow h-100">
+                    <!-- Изображение сверху карточки -->
+                    <img src="healthcare.jpg" class="card-img-top rounded-top"
+                        alt="Професійна турбота">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark fw-bold mb-3">Професійна турбота</h5>
+                        <p class="card-text text-muted">Наш персонал проходить спеціальне навчання для надання
+                            кваліфікованого догляду та підтримки, щоб створити умови для комфортного життя.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value 3: Дружня атмосфера -->
+            <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card border-0 shadow h-100">
+                    <!-- Изображение сверху карточки -->
+                    <img src="elder-fun.jpg" class="card-img-top rounded-top"
+                        alt="Дружня атмосфера">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark fw-bold mb-3">Дружня атмосфера</h5>
+                        <p class="card-text text-muted">Ми створюємо середовище, де кожен може знайти нових друзів,
+                            спілкуватися та брати участь у спільних заходах, зберігаючи активність і радість.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        
+<!-- Block 3: Наші послуги — більше, ніж догляд -->
+<section id="services" class="py-5 bg-white">
+    <div class="container">
+        <!-- Заголовок секции -->
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+                <h2 class="display-4 fw-bold text-dark">Наші послуги — більше, ніж догляд</h2>
+                <p class="lead text-muted mt-3">Ми пропонуємо комплексний підхід до здоров’я та добробуту мешканців,
+                    враховуючи індивідуальні потреби кожного. Дізнайтеся, як ми піклуємося про комфорт та щасливе життя
+                    ваших близьких.</p>
+            </div>
+        </div>
+
+        <!-- Карточки услуг -->
+        <div class="row gy-4">
+            <!-- Карточка 1: Цілодобовий медичний догляд -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-heartbeat fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Цілодобовий медичний догляд та реабілітація</h5>
+                        <p class="card-text text-muted">Лікувальна фізкультура, регулярні огляди лікарів та контроль
+                            стану здоров’я для підтримання активності та здоров’я.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 2: Гігієнічні процедури -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-bath fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Гігієнічні процедури та допомога у повсякденному
+                            житті</h5>
+                        <p class="card-text text-muted">Догляд за зовнішністю, гігієна та допомога з побутовими
+                            питаннями, щоб мешканці завжди відчували себе комфортно та впевнено.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 3: Збалансоване харчування -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-utensils fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Збалансоване харчування</h5>
+                        <p class="card-text text-muted">Меню, складене дієтологами, враховує дієтичні рекомендації та
+                            індивідуальні потреби, забезпечуючи оптимальне здоров’я.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 4: Організація дозвілля -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-music fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Організація дозвілля та культурні заходи</h5>
+                        <p class="card-text text-muted">Тематичні вечори, творчі гуртки, екскурсії та майстер-класи, що
+                            збагачують життя та створюють позитивні емоції.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 5: Підтримка психоемоційного стану -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-brain fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Підтримка психоемоційного стану</h5>
+                        <p class="card-text text-muted">Консультації з психологом, групові заняття та індивідуальна
+                            підтримка для покращення морального духу мешканців.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 6: Сучасні умови проживання -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-home fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Сучасні умови проживання</h5>
+                        <p class="card-text text-muted">Затишні кімнати, сучасне обладнання та комфортні зони відпочинку
+                            для кожного мешканця. Ми дбаємо про безпеку та зручність наших мешканців.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Block 5: Як ми працюємо -->
+<section id="how-we-work" class="py-5 bg-light">
+    <div class="container">
+        <!-- Заголовок секции -->
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+                <h2 class="display-4 fw-bold text-dark">Як ми працюємо?</h2>
+                <p class="lead text-muted mt-3">Ми робимо процес розміщення та адаптації простим та комфортним для всіх.
+                    Дізнайтеся більше про кожен етап нашої роботи та як ми дбаємо про ваших близьких.</p>
+            </div>
+        </div>
+
+        <!-- Карточки процессов работы -->
+        <div class="row gy-4">
+            <!-- Карточка 1: Залиште заявку або зателефонуйте нам -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-phone-alt fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Залиште заявку або зателефонуйте нам</h5>
+                        <p class="card-text text-muted">Ми відповімо на всі ваші питання та організуємо консультацію з
+                            нашим фахівцем для більш детальної інформації.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 2: Індивідуальна оцінка потреб -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-user-check fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Індивідуальна оцінка потреб</h5>
+                        <p class="card-text text-muted">Разом ми визначимо, які саме послуги потрібні вашому близькому,
+                            і створимо індивідуальну програму догляду.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 3: Знайомство та адаптація -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-handshake fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Знайомство та адаптація</h5>
+                        <p class="card-text text-muted">Ми допоможемо вашому родичу адаптуватися до нового середовища та
+                            налагодити дружні стосунки з іншими мешканцями.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 4: Безпечне та щасливе життя -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <div class="icon-box text-warning mb-4">
+                            <i class="fas fa-heart fa-3x"></i>
+                        </div>
+                        <h5 class="card-title fw-bold text-dark mb-3">Безпечне та щасливе життя</h5>
+                        <p class="card-text text-muted">Наша команда піклується про кожен аспект життя мешканців, аби
+                            вони відчували турботу, захищеність і задоволення від кожного дня.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка CTA -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-4 text-center">
+                <a href="#contact" class="btn btn-warning btn-lg text-white px-4 py-3">
+                    <i class="fas fa-info-circle me-2"></i> Залишити заявку на консультацію
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 bg-light">
+    <div class="container">
+        <!-- Заголовок секции -->
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+                <h2 class="display-4 fw-bold text-dark">Реальні історії наших мешканців та відгуки родичів</h2>
+                <p class="lead text-muted mt-3">Відгуки тих, хто вже скористався нашими послугами, розповідають про
+                    любов, турботу та справжню домашню атмосферу.</p>
+            </div>
+        </div>
+
+        <!-- Слайдер с отзывами -->
+        <div id="testimonialCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Слайд 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-box bg-white shadow p-5 rounded-lg position-relative text-center">
+                                <div class="mb-4">
+                                    <img src="about1.jpg    " alt="Мешканець"
+                                        class="rounded-circle border border-3 border-warning mx-auto"
+                                        style="width: 100px; height: 100px;">
+                                </div>
+                                <div class="testimonial-content">
+                                    <h4 class="fw-bold text-dark mb-3">"Моя мама знову посміхається"</h4>
+                                    <p class="text-muted mb-4">
+                                        Професіоналізм та людяність кожного працівника — ось що відрізняє цей дім.
+                                        Завдяки їхній турботі, моя мама щодня ділиться новими враженнями, відчуваючи
+                                        себе комфортно та спокійно.
+                                    </p>
+                                    <span class="text-warning">— Наталія, донька мешканки</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Слайд 2 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-box bg-white shadow p-5 rounded-lg position-relative text-center">
+                                <div class="mb-4">
+                                    <img src="about2.jpg" alt="Мешканець"
+                                        class="rounded-circle border border-3 border-warning mx-auto"
+                                        style="width: 100px; height: 100px;">
+                                </div>
+                                <div class="testimonial-content">
+                                    <h4 class="fw-bold text-dark mb-3">"Місце, де знову знаходиш себе"</h4>
+                                    <p class="text-muted mb-4">
+                                        Наш дідусь знову активний та сповнений енергії, спілкується з новими друзями та
+                                        навіть знайшов нове хобі — грає у шахи. Ми вдячні персоналу за їхню увагу та
+                                        створення справжнього дому.
+                                    </p>
+                                    <span class="text-warning">— Андрій, онук мешканця</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Слайд 3 -->
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-box bg-white shadow p-5 rounded-lg position-relative text-center">
+                                <div class="mb-4">
+                                    <img src="about3.jpg" alt="Мешканець"
+                                        class="rounded-circle border border-3 border-warning mx-auto"
+                                        style="width: 100px; height: 100px;">
+                                </div>
+                                <div class="testimonial-content">
+                                    <h4 class="fw-bold text-dark mb-3">"Затишні умови та чудова атмосфера"</h4>
+                                    <p class="text-muted mb-4">
+                                        Моя бабуся знайшла нових друзів і кожного дня ділиться позитивними емоціями. Тут
+                                        дбають про кожну дрібницю, і я впевнений, що вона в безпеці та оточена турботою.
+                                    </p>
+                                    <span class="text-warning">— Олена, онучка мешканки</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопки управления слайдером -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-warning rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Попередній</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-warning rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Наступний</span>
+            </button>
+        </div>
+
+        <!-- Кнопка CTA -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-4 text-center">
+                <a href="#contact" class="btn btn-warning btn-lg text-white px-4 py-3">
+                    <i class="fas fa-comment-dots me-2"></i> Читати більше відгуків
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <!-- Заголовок FAQ -->
+            <div class="row justify-content-center text-center mb-4">
+                <div class="col-lg-8">
+                    <h2 class="display-4 fw-bold text-dark">Часті питання</h2>
+                    <p class="lead text-muted mt-2">Відповіді на найпоширеніші питання про наш будинок для літніх людей.
+                        Якщо ви не знайшли потрібної інформації, будь ласка, зв’яжіться з нами.</p>
+                </div>
+            </div>
+            <!-- Аккордеон Bootstrap для FAQ -->
+            <div class="accordion" id="faqAccordion">
+                <!-- Вопрос 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Які послуги входять у вартість проживання?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            У вартість проживання включено цілодобовий догляд, регулярні медичні огляди, харчування, участь
+                            у щоденних заходах, а також соціальна та психологічна підтримка.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Вопрос 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Який медичний догляд надається мешканцям?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Ми забезпечуємо регулярні огляди лікарів, контроль стану здоров’я, лікувальну фізкультуру,
+                            реабілітаційні послуги та консультації з фахівцями.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Вопрос 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Чи можна відвідувати рідних у будь-який час?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Так, наші двері завжди відкриті для відвідувачів. Ми запрошуємо родичів та близьких відвідувати
+                            мешканців у будь-який зручний час відповідно до графіка роботи.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Вопрос 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Яке харчування пропонується мешканцям?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Наше меню розроблене дієтологами, з урахуванням дієтичних потреб мешканців. Пропонуються
+                            різноманітні страви, збалансовані за вітамінами та мінералами, з урахуванням індивідуальних
+                            уподобань.
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Вопрос 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Як відбувається адаптація нових мешканців?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Наша команда допомагає новим мешканцям легко адаптуватися до нових умов. Ми організовуємо
+                            знайомство з іншими мешканцями, залучаємо до заходів та надаємо психологічну підтримку.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold text-dark mb-5">Зв'яжіться з нами</h2>
+            <form class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Ім'я">
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control form-control-lg" placeholder="Номер телефону">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control form-control-lg" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control form-control-lg" rows="4"
+                            placeholder="Ваше повідомлення"></textarea>
+                    </div>
+                    <button class="btn btn-warning btn-lg text-white"><i
+                            class="fas fa-paper-plane me-2"></i>Надіслати</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+<!-- Block 6: Контакти та розташування -->
+<section id="contact-info" class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+                <h2 class="display-4 fw-bold text-dark">Контакти та розташування</h2>
+                <p class="lead text-muted mt-3">Ми завжди на зв’язку, готові відповісти на всі ваші питання та
+                    організувати екскурсію до нашого будинку для літніх людей.</p>
+            </div>
+        </div>
+        <div class="row gy-4">
+            <!-- Контактна інформація -->
+            <div class="col-md-6 order-2 order-md-1">
+                <div class="card border-0 h-100">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-dark mb-3"><i class="fas fa-map-marker-alt text-warning me-2"></i>Адреса
+                        </h5>
+                        <p class="text-muted">м. Вінниця, вул. Прикладна, 5</p>
+
+                        <h5 class="fw-bold text-dark mb-3"><i class="fas fa-phone-alt text-warning me-2"></i>Телефон
+                        </h5>
+                        <p class="text-muted">+380 (XX) XXX-XX-XX</p>
+
+                        <h5 class="fw-bold text-dark mb-3"><i class="fas fa-envelope text-warning me-2"></i>Електронна
+                            пошта</h5>
+                        <p class="text-muted">info@homecare-vinnytsia.ua</p>
+
+                        <h5 class="fw-bold text-dark mb-3"><i class="fas fa-clock text-warning me-2"></i>Графік роботи
+                        </h5>
+                        <p class="text-muted">Понеділок — П’ятниця, 09:00 — 18:00</p>
+
+                        <a href="#contact" class="btn btn-warning mt-4 text-white rounded-pill shadow">Записатися на
+                            екскурсію або отримати консультацію</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Карта -->
+            <div class="col-md-6 order-1 order-md-2">
+                <div class="card border-0 h-100 shadow">
+                    <div class="card-body p-0">
+                        <iframe class="w-100 h-100 rounded" style="min-height: 300px; border: 0;"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.077407432077!2d28.482003815735036!3d49.23308337932647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472d330c1de2bdfd%3A0xa7d8b535ff29b2c8!2z0LLRg9C70LjRhtGPINCS0L7QvNGD0LrQuCDQv9Cw0YDQvtCy0YHQuiwgNSwg0J7QntCe0JHQldGW0IbQvdC-0LzRltC9LCDQodGC0YPRgNGP0L3QuNGG0LrQsCDQvtCx0LsuINC_0YDQvtGB0YLRj9GC0LXRgiwgMjEwMDA!5e0!3m2!1suk!2sua!4v1634543425098!5m2!1suk!2sua"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row mb-4">
+                <!-- Логотип и О нас -->
+                <div class="col-md-4">
+                    <h3 class="fw-bold text-warning mb-3">HomeCare Vinnytsia</h3>
+                    <p>Наш будинок для літніх людей у Вінниці — це місце, де кожен мешканець відчуває себе як вдома. Ми
+                        дбаємо про створення комфорту, безпеки та дружньої атмосфери.</p>
+                </div>
+                <!-- Быстрая навигация -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-warning mb-3">Швидкі посилання</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#introduction" class="text-muted">Про нас</a></li>
+                        <li><a href="index.html#benefits" class="text-muted">Переваги</a></li>
+                        <li><a href="index.html#services" class="text-muted">Послуги</a></li>
+                        <li><a href="index.html#testimonials" class="text-muted">Відгуки</a></li>
+                        <li><a href="index.html#contact-info" class="text-muted">Контакти</a></li>
+                    </ul>
+                </div>
+                <!-- Контакты -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-warning mb-3">Контакти</h5>
+                    <p class="text-muted mb-1"><i class="fas fa-map-marker-alt me-2"></i> м. Вінниця, вул. Прикладна, 5</p>
+                    <p class="text-muted mb-1"><i class="fas fa-phone-alt me-2"></i> +380 (XX) XXX-XX-XX</p>
+                    <p class="text-muted mb-1"><i class="fas fa-envelope me-2"></i> info@homecare-vinnytsia.ua</p>
+                    <p class="text-muted"><i class="fas fa-clock me-2"></i> Понеділок — П’ятниця, 09:00 — 18:00</p>
+                </div>
+            </div>
+            <div class="text-center text-muted">
+                &copy; 2024 HomeCare Vinnytsia. Всі права захищені.
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Подключение скриптов -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 200,
+        });
+    </script>
+</body>
+
+</html>
