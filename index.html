@@ -16,58 +16,77 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
-<!-- Navbar -->
-<!-- Navbar -->
-<nav class="fixed w-full bg-white shadow-lg z-50">
-    <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
+    <div class="container">
         <!-- Логотип -->
-        <div class="text-xl md:text-2xl font-bold text-yellow-500">
-            <a href="#" class="hover:text-yellow-600 transition-all">
-                <i class="fas fa-home"></i> HomeCare Vinnytsia
-            </a>
+        <a class="navbar-brand fw-bold text-warning" href="#">
+            <i class="fas fa-home"></i> HomeCare Vinnytsia
+        </a>
+
+        <!-- Кнопка для мобильного меню (отображается только на мобильных) -->
+        <button class="navbar-toggler border-0 shadow-none d-lg-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Основное меню навигации для десктопов -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#introduction">Про нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#benefits">Переваги</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#services">Послуги</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#testimonials">Відгуки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#contact-info">Контакти</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a href="#contact" class="btn btn-warning text-white px-4 py-2 rounded-pill shadow-sm fw-bold">
+                        <i class="fas fa-phone-alt me-2"></i>Записатися на екскурсію
+                    </a>
+                </li>
+            </ul>
         </div>
-        <!-- Ссылки навигации -->
-        <div class="hidden md:flex space-x-4 lg:space-x-6">
-            <a href="#introduction" class="text-gray-700 hover:text-yellow-500 transition-all">Про нас</a>
-            <a href="#benefits" class="text-gray-700 hover:text-yellow-500 transition-all">Переваги</a>
-            <a href="#services" class="text-gray-700 hover:text-yellow-500 transition-all">Послуги</a>
-            <a href="#testimonials" class="text-gray-700 hover:text-yellow-500 transition-all">Відгуки</a>
-            <a href="#contact-info" class="text-gray-700 hover:text-yellow-500 transition-all">Контакти</a>
-        </div>
-        <!-- Кнопка CTA -->
-        <div class="hidden md:flex">
-            <a href="#contact"
-                class="inline-block bg-yellow-500 text-white px-4 md:px-6 py-2 rounded-full font-semibold hover:bg-yellow-600 transition-all">
-                Записатися на екскурсію
-            </a>
-        </div>
-        <!-- Мобильное меню (иконка) -->
-        <div class="md:hidden">
-            <button id="nav-toggle" class="text-gray-700 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+
+        <!-- Offcanvas меню для мобильной версии (скрыто на больших экранах) -->
+        <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#introduction">Про нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Переваги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Послуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Відгуки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-info">Контакти</a>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-warning text-white mt-3 w-100">
+                    <i class="fas fa-phone-alt me-2"></i>Записатися на екскурсію
+                </a>
+            </div>
         </div>
     </div>
 </nav>
-
-<!-- Мобильное меню -->
-<div id="nav-menu"
-    class="md:hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-40 hidden">
-    <div class="bg-white rounded-lg w-3/4 max-w-sm p-8 space-y-6">
-        <a href="#introduction" class="block text-lg text-gray-700 hover:text-yellow-500">Про нас</a>
-        <a href="#benefits" class="block text-lg text-gray-700 hover:text-yellow-500">Переваги</a>
-        <a href="#services" class="block text-lg text-gray-700 hover:text-yellow-500">Послуги</a>
-        <a href="#testimonials" class="block text-lg text-gray-700 hover:text-yellow-500">Відгуки</a>
-        <a href="#contact-info" class="block text-lg text-gray-700 hover:text-yellow-500">Контакти</a>
-        <a href="#contact"
-            class="block bg-yellow-500 text-white text-center rounded-full px-6 py-2 hover:bg-yellow-600 transition-all">
-            Записатися на екскурсію
-        </a>
-        <button id="nav-close" class="text-gray-500 hover:text-gray-700 absolute top-6 right-6">
-            <i class="fas fa-times text-2xl"></i>
-        </button>
-    </div>
-</div>
 
 
 <!-- Hero Section -->

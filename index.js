@@ -36,30 +36,44 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 });
 
-// Мобильное меню навбара
-document.addEventListener('DOMContentLoaded', function () {
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const navClose = document.getElementById('nav-close');
+document.addEventListener("DOMContentLoaded", function () {
+    // Получаем элементы навигации
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const offcanvasNavbar = document.querySelector("#offcanvasNavbar");
+    const offcanvasCloseBtn = offcanvasNavbar.querySelector(".btn-close");
+    const navLinks = offcanvasNavbar.querySelectorAll(".nav-link");
 
-    if (navToggle && navMenu && navClose) {
-        navToggle.addEventListener('click', function () {
-            navMenu.classList.toggle('active');
-        });
-
-        navClose.addEventListener('click', function () {
-            navMenu.classList.remove('active');
-        });
+    // Функция для открытия и закрытия Offcanvas меню
+    function toggleOffcanvas() {
+        offcanvasNavbar.classList.toggle("show");
+        document.body.classList.toggle("offcanvas-open");
     }
 
-    // Изменение цвета навбара при прокрутке
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
+    // Переключение Offcanvas меню по нажатию на кнопку
+    navbarToggler.addEventListener("click", function () {
+        toggleOffcanvas();
+    });
+
+    // Закрытие Offcanvas меню по нажатию на кнопку закрытия
+    offcanvasCloseBtn.addEventListener("click", function () {
+        toggleOffcanvas();
+    });
+
+    // Закрытие Offcanvas меню при клике на любую из ссылок
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            toggleOffcanvas();
+        });
+    });
+
+    // Закрытие Offcanvas при клике вне меню
+    document.addEventListener("click", function (event) {
+        if (!offcanvasNavbar.contains(event.target) && !navbarToggler.contains(event.target)) {
+            if (offcanvasNavbar.classList.contains("show")) {
+                toggleOffcanvas();
+            }
         }
     });
 });
+
 

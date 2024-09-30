@@ -17,7 +17,6 @@
 
 <body class="bg-light">
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow fixed-top">
     <div class="container">
         <!-- Логотип -->
@@ -26,12 +25,13 @@
         </a>
 
         <!-- Кнопка переключения мобильного меню -->
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Основные ссылки навигации -->
+        <!-- Основное меню навигации -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
@@ -57,9 +57,38 @@
                 </li>
             </ul>
         </div>
+
+        <!-- Offcanvas меню для мобильной версии -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#introduction">Про нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Переваги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Послуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Відгуки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-info">Контакти</a>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-warning text-white mt-3 w-100">
+                    <i class="fas fa-phone-alt me-2"></i>Записатися на екскурсію
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
-
 <!-- Hero Section -->
 <section id="hero-slider" class="hero-section position-relative bg-dark text-white"
     style="height: 100vh; overflow: hidden;">
